@@ -1,0 +1,150 @@
+.svg {
+    width: 100px;
+    min-height: 100px;
+    background: url('../img/arrow-through-heart.svg') no-repeat;
+    background-size: 100%;
+}
+
+.svg:hover {
+    background: url('../img/asterisk.svg') no-repeat;
+    background-size: 100%;
+}
+
+.svg2 {
+    width: 100px;
+    height: 100px;
+}
+
+.svg2:hover {
+    fill: rgb(255, 6, 6);
+    width: 100px;
+    height: 100px;
+    transition-property: fill;
+    transition-duration: 2s;
+    transition-delay: 1.5s;
+    
+}
+
+.svg3 {
+    font-size: 100px;
+    color: rgb(3, 66, 255);
+    transition:all 3s 1s ease-in-out ;
+}
+
+.svg3:hover {
+   font-size: 150px;
+   color: rgb(6, 68, 253);
+   transition:all 3s 1s ease-in-out ;
+   transition-duration: 2s;
+}
+
+.svg4 {
+    width: 100px;
+}
+
+.svg4 path{
+    width: 300px;
+    stroke: rebeccapurple;
+}
+
+#roof {
+    transform: scaleX(2);
+}
+
+#wall {
+    transform: skewY(30deg);
+}
+
+/*--------------------------------------------------------------Анимация---------------------------------------------------------------------------*/
+
+@keyframes animate1 {
+    0%{
+        transform: translate(0);
+    }
+    30%{
+        transform: translate(200px);
+        background: blue;
+    }
+    60%{
+        transform: translate(200px) rotate(30deg);
+    }
+    100%{
+        transform: translate(200px) rotate(0);
+        background: blueviolet;
+    }
+}
+
+.block {
+    background-color: aqua;
+    width: 200px;
+    height: 200px;
+    margin: 100px auto; 
+    animation: animate1 5s infinite alternate;
+    animation-play-state: paused;
+}
+
+.block:hover {
+    animation-play-state: paused;
+}
+
+#start-animation:checked+.block {
+    animation-play-state: running;
+}
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+* {
+    box-sizing: border-box;
+}
+
+.nav {
+    display: flex;
+    height: 50px;
+    background-color: rgb(71, 93, 153);
+    width: 100%;
+    padding-top: 20px;
+    z-index: 1;
+}
+
+.nav li {
+    list-style: none;
+    padding-left: 0;
+}
+
+.nav li a {
+    padding: 5px;
+    text-decoration: none;
+    display: block;
+}
+
+.nav li a:hover {
+    text-decoration: underline;
+}
+
+.drop-menu {
+    position: relative;
+}
+
+.drop-menu>ul {
+    background-color: lightseagreen;
+    border: chartreuse 1px solid;
+    position: absolute;
+    top: -20px;
+    min-width: 100px;
+    z-index: -1;
+    opacity: 0; 
+    transition: all 3s;
+}
+
+.drop-menu li {
+    border-bottom: chartreuse 1px dashed;
+}
+
+.drop-menu li:last-child {
+    border-bottom: none;
+}
+
+.drop-menu:hover>ul {
+    top: 30px;
+    opacity: 1;
+}
+

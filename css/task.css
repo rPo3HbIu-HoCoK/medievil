@@ -1,0 +1,28 @@
+.block-ballon {
+    display: flex;
+    justify-content: center;
+    width: 1110px;
+}
+
+.label {
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes animate1 {
+    0%{
+        transform: translateY(0);
+    }   
+    100%{
+        transform: translateY(-500px);
+    }
+}
+
+#block {
+    animation: animate1 5s infinite alternate;  
+    animation-play-state: running;
+}
+
+#start-animation:checked+#block {
+    animation-play-state: running;
+}
